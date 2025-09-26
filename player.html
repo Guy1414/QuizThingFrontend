@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Sprint - Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="player-view">
+    <div class="game-container">
+      <div class="header">
+        <h1>Word Sprint</h1>
+        <div class="game-status">Join the game!</div>
+      </div>
+
+      <div id="joinScreen" class="screen">
+        <div class="join-form">
+          <input
+            type="text"
+            id="nicknameInput"
+            placeholder="Enter your nickname"
+            maxlength="15"
+          />
+          <button id="joinGame" class="btn">Join Game</button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="screen hidden">
+        <div class="category-display">
+          <h2>Category</h2>
+          <div id="currentCategory">-</div>
+        </div>
+        <div class="timer-display">
+          <div id="timer">-</div>
+        </div>
+        <div class="answer-form">
+          <input
+            type="text"
+            id="answerInput"
+            placeholder="Type your answer"
+            disabled
+          />
+          <button id="submitAnswer" class="btn" disabled>Submit</button>
+        </div>
+        <div class="round-results hidden">
+          <h2>Round Results</h2>
+          <div id="personalScore"></div>
+          <div id="topAnswers"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/player.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Sprint - Host</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="host-view">
+    <div class="game-container">
+      <div class="header">
+        <h1>Word Sprint</h1>
+        <div class="game-status">Waiting for players...</div>
+      </div>
+      <div class="main-content">
+        <div class="category-display">
+          <h2>Category</h2>
+          <div id="currentCategory">-</div>
+        </div>
+        <div class="timer-display">
+          <h2>Time Remaining</h2>
+          <div id="timer">-</div>
+        </div>
+        <div class="controls">
+          <button id="startRound" class="btn">Start Round</button>
+          <button id="nextRound" class="btn" disabled>Next Round</button>
+          <button id="resetGame" class="btn">Reset Game</button>
+        </div>
+      </div>
+      <div class="game-stats">
+        <div class="leaderboard">
+          <h2>Leaderboard</h2>
+          <div id="leaderboardList"></div>
+        </div>
+        <div class="top-answers">
+          <h2>Top Answers</h2>
+          <div id="answersList"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/host.js"></script>
+  </body>
+</html>

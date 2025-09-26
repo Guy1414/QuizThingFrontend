@@ -1,0 +1,14 @@
+{
+    "name": "word-sprint-frontend",
+    "version": "1.0.0",
+    "description": "Frontend for Word Sprint multiplayer game",
+    "scripts": {
+        "start": "http-server -p 3000"
+    },
+    "dependencies": {
+        "socket.io-client": "^4.7.2"
+    },
+    "devDependencies": {
+        "http-server": "^14.1.1"
+    }
+}
