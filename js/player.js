@@ -1,5 +1,5 @@
 // Initialize Socket.IO connection
-const socket = io("https://quizthingbackend.onrender.com/");
+const socket = io("http://localhost:3001");
 
 // DOM Elements
 const gameStatus = document.querySelector(".game-status");
@@ -146,19 +146,19 @@ function displayResults(data) {
   roundResults.classList.remove("hidden");
 
   // Show personal score
-  const playerData = data.players.find((p) => p.nickname === nickname);
-  if (playerData) {
-    personalScore.textContent = `Your score: ${playerData.score}`;
-  }
+  personalScore.textContent = `Your total score: ${data.playerScore}`;
 
-  // Show top answers
-  topAnswers.innerHTML = data.topAnswers
+  // Show answer breakdown
+  const answerBreakdown = document.getElementById("answerBreakdown");
+  answerBreakdown.innerHTML = data.answers
     .map(
       (answer) => `
-            <div class="answer-item">
-                ${answer.word} (${answer.count})
-            </div>
-        `
+        <div class="answer-item ${answer.status}">
+          <span class="answer-text">${answer.word}</span>
+          <span class="answer-points">${answer.points > 0 ? '+' : ''}${answer.points}</span>
+          <span class="answer-reason">${answer.reason}</span>
+        </div>
+      `
     )
     .join("");
 }
@@ -181,4 +181,3 @@ function updateGameStatus(message) {
 function getRandomMessage(messages) {
   return messages[Math.floor(Math.random() * messages.length)];
 }
-
