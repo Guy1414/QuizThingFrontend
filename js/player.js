@@ -1,5 +1,5 @@
 // Initialize Socket.IO connection
-const socket = io("http://localhost:3001");
+const socket = io("https://quizthingbackend.onrender.com/");
 
 // DOM Elements
 const gameStatus = document.querySelector(".game-status");
@@ -181,3 +181,4 @@ function updateGameStatus(message) {
 function getRandomMessage(messages) {
   return messages[Math.floor(Math.random() * messages.length)];
 }
+
