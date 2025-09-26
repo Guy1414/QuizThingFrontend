@@ -1,0 +1,42 @@
+.answer-breakdown {
+    margin-top: 15px;
+}
+
+.answer-item {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answer-item.first {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.answer-item.valid {
+    background-color: #2196F3;
+    color: white;
+}
+
+.answer-item.invalid {
+    background-color: #f44336;
+    color: white;
+}
+
+.answer-text {
+    flex: 1;
+}
+
+.answer-points {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.answer-reason {
+    font-size: 0.9em;
+    margin-left: 10px;
+    opacity: 0.9;
+}
