@@ -110,9 +110,9 @@ function submitAnswer() {
   if (!answer) return;
 
   socket.emit("submitAnswer", { answer });
-  answerInput.disabled = true;
-  submitAnswerBtn.disabled = true;
-  updateGameStatus("Answer submitted! Wait for others...");
+  answerInput.value = ""; // Clear the input for the next answer
+  answerInput.focus(); // Keep focus on input for quick typing
+  updateGameStatus("Answer submitted! Keep going!");
 }
 
 function startTimer(duration) {
@@ -181,3 +181,4 @@ function updateGameStatus(message) {
 function getRandomMessage(messages) {
   return messages[Math.floor(Math.random() * messages.length)];
 }
+
